@@ -4,13 +4,11 @@ export const useCounter = () => {
     const [count, setCount] = useState<number>(0)
 
     const increase = useCallback(() => {
-        const number = count + 1
-        setCount(number)
+        setCount(n => n + 1)
     }, [count])
 
     const decrease = useCallback(( ) => {
-        const number = count - 1
-        setCount(number)
+        setCount(n => n - 1)
     }, [count])
 
     return {count, increase, decrease}
